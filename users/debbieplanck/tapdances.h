@@ -16,7 +16,9 @@ typedef enum {
 // TAP DANCE enum
 enum {
     QUOT_GRV = 0,
-    ENT_NAV
+    NAV_MOUSE,
+    SPC_NUM_SYM,
+    TAB_FUN
 };
 
 typedef struct {
@@ -27,14 +29,23 @@ typedef struct {
 // Function associated with all tap dances
 td_state_t cur_dance(tap_dance_state_t *state);
 
-// SINGLE TAP: ENTER // SINGLE HOLD: NAV LAYER
-void en_finished(tap_dance_state_t *state, void *user_data);
-void en_reset(tap_dance_state_t *state, void *user_data);
+// SINGLE HOLD: NAV LAYER  // DOUBLE HOLD: MOUSE LAYER
+void nm_finished(tap_dance_state_t *state, void *user_data);
+void nm_reset(tap_dance_state_t *state, void *user_data);
 
-/* Define Tap dance actions.
-*/
+// SINGLE TAP: SPACE   // SINGLE HOLD: NUM LAYER    // DOUBLE HOLD: SYM LAYER
+void sns_finished(tap_dance_state_t *state, void *user_data);
+void sns_reset(tap_dance_state_t *state, void *user_data);
+
+// SINGLE TAP: TAB    // SINGLE HOLD: FUN LAYER
+void tf_finished(tap_dance_state_t *state, void *user_data);
+void tf_reset(tap_dance_state_t *state, void *user_data);
+
+/* Define Tap dance actions. */
 __attribute__((weak))
-tap_dance_action_t tap_dance_actions[2] = {
+tap_dance_action_t tap_dance_actions[4] = {
     [QUOT_GRV] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_GRV),
-    [ENT_NAV] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, en_finished, en_reset)
+    [NAV_MOUSE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, nm_finished, nm_reset),
+    [SPC_NUM_SYM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sns_finished, sns_reset),
+    [TAB_FUN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tf_finished, tf_reset)
 };

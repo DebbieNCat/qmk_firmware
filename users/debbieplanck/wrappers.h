@@ -51,7 +51,7 @@
 #define __SYM_R4      KC_ENT,    _______,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX
 
 // ADJ
-#define __ADJ_L1      XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   QK_BOOT,   XXXXXXX
+#define __ADJ_L1      MIRYOKU,   XXXXXXX,   XXXXXXX,   XXXXXXX,   QK_BOOT,   XXXXXXX
 #define __ADJ_L2      __BLANK_NOOP
 #define __ADJ_L3      __BLANK_NOOP
 #define __ADJ_L4      XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   _______,   XXXXXXX
@@ -60,3 +60,61 @@
 #define __ADJ_R2      XXXXXXX,   RGB_SPI,   RGB_SPD,   RGB_SAI,   RGB_SAD,   XXXXXXX
 #define __ADJ_R3      KC_NUM,    XXXXXXX,   XXXXXXX,   RGB_VAI,   RGB_VAD,   XXXXXXX
 #define __ADJ_R4      XXXXXXX,   _______,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX
+
+// -------------------------------------------------------------------------------------
+// HOME ROW MODE LAYER -----------------------------------------------------------------
+// -------------------------------------------------------------------------------------
+#define _M_QWERTY_L1   KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,      XXXXXXX
+#define _M_QWERTY_L2   M_GUIA,    M_ALTS,    M_CTLD,    M_SFTF,    KC_G,      XXXXXXX
+#define _M_QWERTY_L3   KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      XXXXXXX
+#define _M_QWERTY_L4   XXXXXXX,   XXXXXXX,   TD_NM,     TD_SNS,    TD_TF,     XXXXXXX
+
+#define _M_QWERTY_R1   XXXXXXX,   KC_Y,      KC_U,      KC_I,      KC_O,      KC_P
+#define _M_QWERTY_R2   XXXXXXX,   KC_H,      M_SFTJ,    M_CTLK,    M_ALTL,    M_GCLN
+#define _M_QWERTY_R3   XXXXXXX,   KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_SLSH
+#define _M_QWERTY_R4   XXXXXXX,   KC_ENT,    KC_BSPC,   KC_DEL,    XXXXXXX,   XXXXXXX
+
+#define _M_LEFT_1      __BLANK_NOOP
+#define _M_LEFT_2      KC_LGUI,   KC_LALT,   KC_LCTL,   KC_LSFT,   XXXXXXX,   XXXXXXX
+#define _M_LEFT_3      __BLANK_NOOP
+#define _M_LEFT_NM     XXXXXXX,   XXXXXXX,   _______,   XXXXXXX,   XXXXXXX,   XXXXXXX
+#define _M_LEFT_NS     XXXXXXX,   XXXXXXX,   XXXXXXX,   _______,   XXXXXXX,   XXXXXXX
+#define _M_LEFT_F      XXXXXXX,   XXXXXXX,   XXXXXXX,   MO_ADJ,    _______,   XXXXXXX
+
+#define _M_NAV_R1      M_REDO,    M_PASTE,   M_COPY,    M_CUT,     M_UNDO,    XXXXXXX
+#define _M_NAV_R2      KC_CAPS,   KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   XXXXXXX
+#define _M_NAV_R3      KC_INS,    KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END,    XXXXXXX
+#define _M_NAV_R4      _______,   _______,   _______,   XXXXXXX,   XXXXXXX,   XXXXXXX
+
+#define _M_MOU_R1      _______,   _______,   _______,   _______,   _______,   XXXXXXX
+#define _M_MOU_R2      XXXXXXX,   KC_MS_L,   KC_MS_D,   KC_MS_U,   KC_MS_R,   XXXXXXX
+#define _M_MOU_R3      XXXXXXX,   KC_WH_L,   KC_WH_D,   KC_WH_U,   KC_WH_R,   XXXXXXX
+#define _M_MOU_R4      KC_BTN2,   KC_BTN1,   KC_BTN3,   XXXXXXX,   XXXXXXX,   XXXXXXX
+
+#define _M_NUM_R1      KC_LBRC,   KC_7,      KC_8,      KC_9,      KC_RBRC,   XXXXXXX
+#define _M_NUM_R2      KC_SCLN,   KC_4,      KC_5,      KC_6,      KC_EQL,    XXXXXXX
+#define _M_NUM_R3      KC_GRV,    KC_1,      KC_2,      KC_3,      KC_BSLS,   XXXXXXX
+#define _M_NUM_R4      KC_MINS,   KC_0,      KC_DOT,    XXXXXXX,   XXXXXXX,   XXXXXXX
+
+#define _M_SYM_R1      KC_LCBR,   KC_AMPR,   KC_ASTR,   KC_LPRN,   KC_RCBR,   XXXXXXX
+#define _M_SYM_R2      KC_COLN,   KC_DLR,    KC_PERC,   KC_CIRC,   KC_PLUS,   XXXXXXX
+#define _M_SYM_R3      KC_TILD,   KC_EXLM,   KC_AT,     KC_HASH,   KC_PIPE,   XXXXXXX
+#define _M_SYM_R4      KC_UNDS,   KC_LPRN,   KC_LT,     XXXXXXX,   XXXXXXX,   XXXXXXX
+
+#define _M_FUN_R1      KC_PSCR,   KC_F7,     KC_F8,     KC_F9,     KC_F12,    XXXXXXX
+#define _M_FUN_R2      XXXXXXX,   KC_F4,     KC_F5,     KC_F6,     KC_F11,    XXXXXXX
+#define _M_FUN_R3      XXXXXXX,   KC_F1,     KC_F2,     KC_F3,     KC_F10,    XXXXXXX
+#define _M_FUN_R4      KC_APP,    KC_BSPC,   KC_DEL,    XXXXXXX,   XXXXXXX,   XXXXXXX
+
+// M ADJ
+#define _M_ADJ_L1      QWERTY,    XXXXXXX,   XXXXXXX,   XXXXXXX,   QK_BOOT,   XXXXXXX
+#define _M_ADJ_L2      __BLANK_NOOP
+#define _M_ADJ_L3      __BLANK_NOOP
+#define _M_ADJ_L4      XXXXXXX,   XXXXXXX,   XXXXXXX,   _______,   _______,   XXXXXXX
+
+#define _M_ADJ_R1      XXXXXXX,   RGB_TOG,   RGB_MOD,   RGB_HUI,   RGB_HUD,   XXXXXXX
+#define _M_ADJ_R2      XXXXXXX,   RGB_SPI,   RGB_SPD,   RGB_SAI,   RGB_SAD,   XXXXXXX
+#define _M_ADJ_R3      KC_NUM,    XXXXXXX,   XXXXXXX,   RGB_VAI,   RGB_VAD,   XXXXXXX
+#define _M_ADJ_R4      XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX
+
+

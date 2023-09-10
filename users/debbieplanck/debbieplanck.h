@@ -18,4 +18,16 @@ enum planck_layers {
     _NAV,
     _SYM,
     _ADJ,
+    _M_BASE,
+    _M_NAV,
+    _M_MOUSE,
+    _M_NUM,
+    _M_SYM,
+    _M_FUN,
+    _M_ADJ
+};
+
+enum planck_keycodes {
+  QWERTY = SAFE_RANGE,
+  MIRYOKU
 };

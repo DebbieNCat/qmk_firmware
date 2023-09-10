@@ -7,6 +7,7 @@ COMBO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 LTO_ENABLE = yes
+MOUSEKEY_ENABLE = yes
 
 # ** Disabled
 AUDIO_ENABLE = no      # Audio output on port C6
@@ -15,5 +16,4 @@ COMMAND_ENABLE = no    # Commands for debug and configuration
 CONSOLE_ENABLE = no    # Console for debug
 MIDI_ENABLE = no       # MIDI controls
 SWAP_HANDS_ENABLE = no # Enable one-hand typing
-MOUSEKEY_ENABLE = no
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
