@@ -22,7 +22,7 @@
 /* KEYMAP */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_BASE] = LAYOUT_wrapper(
+[_QWERTY] = LAYOUT_wrapper(
      __QWERTY_L1,      __QWERTY_R1,
      __QWERTY_L2,      __QWERTY_R2,
      __QWERTY_L3,      __QWERTY_R3,
@@ -52,47 +52,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      __ADJ_L3,         __ADJ_R3,
      __ADJ_L4,         __ADJ_R4
 ),
-[_M_BASE] = LAYOUT_wrapper(
+[_MIRYOKU] = LAYOUT_wrapper(
      _M_QWERTY_L1,     _M_QWERTY_R1,
      _M_QWERTY_L2,     _M_QWERTY_R2,
      _M_QWERTY_L3,     _M_QWERTY_R3,
      _M_QWERTY_L4,     _M_QWERTY_R4
 ),
-[_M_NAV] = LAYOUT_wrapper(
-     _M_LEFT_1,        _M_NAV_R1,
-     _M_LEFT_2,        _M_NAV_R2,
-     _M_LEFT_3,        _M_NAV_R3,
-     _M_LEFT_NM,       _M_NAV_R4
-),
-[_M_MOUSE] = LAYOUT_wrapper(
-     _M_LEFT_1,        _M_MOU_R1,
-     _M_LEFT_2,        _M_MOU_R2,
-     _M_LEFT_3,        _M_MOU_R3,
-     _M_LEFT_NM,       _M_MOU_R4
-),
 [_M_NUM] = LAYOUT_wrapper(
-     _M_LEFT_1,        _M_NUM_R1,
-     _M_LEFT_2,        _M_NUM_R2,
-     _M_LEFT_3,        _M_NUM_R3,
-     _M_LEFT_NS,       _M_NUM_R4
+     _M_COMMON_L13,    _M_NUM_R1,
+     _M_COMMON_L2,     _M_NUM_R2,
+     _M_COMMON_L13,    _M_NUM_R3,
+     _M_NUM_L4,        _M_NUM_R4
 ),
 [_M_SYM] = LAYOUT_wrapper(
-     _M_LEFT_1,        _M_SYM_R1,
-     _M_LEFT_2,        _M_SYM_R2,
-     _M_LEFT_3,        _M_SYM_R3,
-     _M_LEFT_NS,       _M_SYM_R4
+     _M_COMMON_L13,    _M_SYM_R1,
+     _M_COMMON_L2,     _M_SYM_R2,
+     _M_COMMON_L13,    _M_SYM_R3,
+     _M_SYM_L4,        _M_SYM_R4
 ),
 [_M_FUN] = LAYOUT_wrapper(
-     _M_LEFT_1,        _M_FUN_R1,
-     _M_LEFT_2,        _M_FUN_R2,
-     _M_LEFT_3,        _M_FUN_R3,
-     _M_LEFT_F,        _M_FUN_R4
+     _M_COMMON_L13,    _M_FUN_R1,
+     _M_COMMON_L2,     _M_FUN_R2,
+     _M_COMMON_L13,    _M_FUN_R3,
+     _M_FUN_L4,        _M_FUN_R4
+),
+[_M_NAV] = LAYOUT_wrapper(
+     _M_NAV_L1,        _M_COMMON_R13,
+     _M_NAV_L2,        _M_COMMON_R2,
+     _M_NAV_L3,        _M_COMMON_R13,
+     _M_NAV_L4,        _M_NAV_R4
+),
+[_M_MOUSE] = LAYOUT_wrapper(
+     _M_MOU_L1,        _M_COMMON_R13,
+     _M_MOU_L2,        _M_COMMON_R2,
+     _M_MOU_L3,        _M_COMMON_R13,
+     _M_MOU_L4,        _M_MOU_R4
 ),
 [_M_ADJ] = LAYOUT_wrapper(
-     _M_ADJ_L1,         _M_ADJ_R1,
-     _M_ADJ_L2,         _M_ADJ_R2,
-     _M_ADJ_L3,         _M_ADJ_R3,
-     _M_ADJ_L4,         _M_ADJ_R4
+     _M_ADJ_L1,        __ADJ_R1,
+     __ADJ_L2,         __ADJ_R2,
+     __ADJ_L3,         __ADJ_R3,
+     __ADJ_L4,         __ADJ_R4
 ),
 };
 
@@ -100,19 +100,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QWERTY:
             if (record -> event.pressed) {
-                print("mode just switched to qwerty");
-                set_single_persistent_default_layer(_BASE);
+                set_single_persistent_default_layer(_QWERTY);
             }
             return false;
             break;
         case MIRYOKU:
             if (record -> event.pressed) {
-                set_single_persistent_default_layer(_M_BASE);
+                set_single_persistent_default_layer(_MIRYOKU);
             }
             return false;
             break;
     }
     return true;
+}
+
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT_SYMT:
+        case LT_NUMD:
+        case LT_FUNS:
+        case LT_NAVB:
+            return TAPPING_TERM;
+        default:
+            return QUICK_TAP_TERM;
+    }
 }
 
 // LED physical location index
@@ -142,22 +153,22 @@ const rgblight_segment_t PROGMEM rgb_adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {5, 4, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM rgb_m_base_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_PURPLE}
+    {0, 3, HSV_PURPLE}, {3, 4, HSV_WHITE}, {7, 1, HSV_PURPLE}
 );
 const rgblight_segment_t PROGMEM rgb_m_nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_GOLDENROD}
+    {0, 3, HSV_GOLDENROD}, {3, 4, HSV_WHITE}, {7, 1, HSV_GOLDENROD}
 );
 const rgblight_segment_t PROGMEM rgb_m_mouse_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_SPRINGGREEN}
+    {0, 3, HSV_SPRINGGREEN}, {3, 4, HSV_WHITE}, {7, 1, HSV_SPRINGGREEN}
 );
 const rgblight_segment_t PROGMEM rgb_m_num_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_TEAL}
+    {0, 3, HSV_TEAL}, {3, 4, HSV_WHITE}, {7, 1, HSV_TEAL}
 );
 const rgblight_segment_t PROGMEM rgb_m_sym_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_ORANGE}
+    {0, 3, HSV_ORANGE}, {3, 4, HSV_WHITE}, {7, 1, HSV_ORANGE}
 );
 const rgblight_segment_t PROGMEM rgb_m_fun_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_WHITE}, {5, 4, HSV_MAGENTA}
+    {0, 3, HSV_MAGENTA}, {3, 4, HSV_WHITE}, {7, 1, HSV_MAGENTA}
 );
 const rgblight_segment_t PROGMEM rgb_m_adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 5, HSV_YELLOW},
@@ -192,7 +203,11 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, _BASE));
+    if (layer_state_is(_QWERTY)) {
+       rgblight_set_layer_state(0, layer_state_cmp(state, _QWERTY));
+    } else {
+       rgblight_set_layer_state(5, layer_state_cmp(state, _MIRYOKU));
+    }
     return state;
 }
 
@@ -202,7 +217,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(3, layer_state_cmp(state, _SYM));
     rgblight_set_layer_state(4, layer_state_cmp(state, _ADJ));
 
-    rgblight_set_layer_state(5, layer_state_cmp(state, _M_BASE));
     rgblight_set_layer_state(6, layer_state_cmp(state, _M_NAV));
     rgblight_set_layer_state(7, layer_state_cmp(state, _M_MOUSE));
     rgblight_set_layer_state(8, layer_state_cmp(state, _M_NUM));

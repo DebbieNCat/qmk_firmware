@@ -6,7 +6,16 @@
 #define MO_NUM           MO(_NUM)
 #define MO_NAV           MO(_NAV)
 #define MO_ADJ           MO(_ADJ)
+
+#define MO_MSYM          MO(_M_SYM)
+#define MO_MFUN          MO(_M_FUN)
 #define MO_MADJ          MO(_M_ADJ)
+
+#define LT_SYMT          LT(_M_SYM, KC_TAB)
+#define LT_NUMD          LT(_M_NUM, KC_DEL)
+#define LT_FUNS          LT(_M_FUN, KC_SPC)
+#define LT_NAVB          LT(_M_NAV, KC_BSPC)
+#define LT_MOUA          LT(_M_MOUSE, KC_RALT)
 
 // MOD_TAP KEYS
 #define MT_ALTB          LALT_T(KC_TAB)
@@ -21,9 +30,6 @@
 
 // TAP DANCE KEYS
 #define TD_QG            TD(QUOT_GRV)
-#define TD_NM            TD(NAV_MOUSE)
-#define TD_SNS           TD(SPC_NUM_SYM)
-#define TD_TF            TD(TAB_FUN)
 
 // INTELLI_J KEYS
 #define DV_RUN           LSFT(KC_F10)         // APPLICATION RUN

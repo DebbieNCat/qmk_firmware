@@ -17,8 +17,8 @@
 #pragma once
 
 #define TAPPING_TERM 175
-#define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM 0
+#define QUICK_TAP_TERM_PER_KEY
 
 #define COMBO_COUNT 3
 #define COMBO_TERM 100
@@ -40,5 +40,18 @@
 
 // Enable Light Layers implementation
 #define RGBLIGHT_LAYERS
+#define RGBLIGHT_MAX_LAYERS 15
 // Allow Light Layers to override RGB off configuration
 #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+
+// Mouse key speed and acceleration.
+#undef MOUSEKEY_DELAY
+#define MOUSEKEY_DELAY          0
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL       16
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_WHEEL_DELAY    0
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED      6
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX    64

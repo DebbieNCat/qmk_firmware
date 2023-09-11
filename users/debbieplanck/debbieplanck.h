@@ -13,12 +13,12 @@
 #endif
 
 enum planck_layers {
-    _BASE = 0,
+    _QWERTY = 0,
     _NUM,
     _NAV,
     _SYM,
     _ADJ,
-    _M_BASE,
+    _MIRYOKU,
     _M_NAV,
     _M_MOUSE,
     _M_NUM,
