@@ -17,13 +17,14 @@
 #pragma once
 
 #define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
 #define QUICK_TAP_TERM 0
 #define QUICK_TAP_TERM_PER_KEY
 
 #define COMBO_COUNT 3
 #define COMBO_TERM 100
 
-// RGB  animation Undefine
+/* RGB  animation Undefine */
 #undef RGBLIGHT_EFFECT_BREATHING
 #undef RGBLIGHT_EFFECT_CHRISTMAS
 #undef RGBLIGHT_EFFECT_KNIGHT
@@ -34,23 +35,24 @@
 #undef RGBLIGHT_EFFECT_STATIC_GRADIENT
 #undef RGBLIGHT_EFFECT_TWINKLE
 
-// Undef and redefine default brightness to half to 255
+/* Undef and redefine default brightness to half to 255 */
 #undef RGBLIGHT_LIMIT_VAL
 #define RGBLIGHT_LIMIT_VAL 200
 
-// Enable Light Layers implementation
+/* Enable Light Layers implementation */
 #define RGBLIGHT_LAYERS
+/* Default layer 8 */
 #define RGBLIGHT_MAX_LAYERS 15
-// Allow Light Layers to override RGB off configuration
+/* Allow Light Layers to override RGB off configuration */
 #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
 
-// Mouse key speed and acceleration.
+/* Mouse key speed and acceleration. */
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY          0
 #undef MOUSEKEY_INTERVAL
 #define MOUSEKEY_INTERVAL       16
 #undef MOUSEKEY_WHEEL_DELAY
-#define MOUSEKEY_WHEEL_DELAY    0
+#define MOUSEKEY_WHEEL_DELAY    400
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED      6
 #undef MOUSEKEY_TIME_TO_MAX

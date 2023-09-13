@@ -114,24 +114,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case M_GUIA:
+        case M_GCLN:
+            return TAPPING_TERM + 100;
+        case M_SFTD:
+        case M_SFTK:
+            return TAPPING_TERM - 25;
+        default: return TAPPING_TERM;
+    }
+}
+
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT_SYMT:
-        case LT_NUMD:
-        case LT_FUNS:
-        case LT_NAVB:
+        case LT_NUMS:
+        case LT_FUNB:
+        case LT_NAVE:
             return TAPPING_TERM;
         default:
             return QUICK_TAP_TERM;
     }
 }
 
-// LED physical location index
-//     6 5 4 3
-//        0
-//     7 8 1 2
+/* LED physical location index
+     6 5 4 3
+        0
+     7 8 1 2
+*/
 
-// RGB RED when capslock is active
+/* RGB RED when capslock is active */
 const rgblight_segment_t PROGMEM rgb_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 1, HSV_RED},
     {8, 1, HSV_RED}
@@ -153,29 +166,28 @@ const rgblight_segment_t PROGMEM rgb_adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {5, 4, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM rgb_m_base_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_PURPLE}, {3, 4, HSV_WHITE}, {7, 1, HSV_PURPLE}
+    {0, 3, HSV_PURPLE}, {3, 4, HSV_WHITE}, {7, 2, HSV_PURPLE}
 );
 const rgblight_segment_t PROGMEM rgb_m_nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_GOLDENROD}, {3, 4, HSV_WHITE}, {7, 1, HSV_GOLDENROD}
+    {0, 3, HSV_GOLDENROD}, {3, 4, HSV_WHITE}, {7, 2, HSV_GOLDENROD}
 );
 const rgblight_segment_t PROGMEM rgb_m_mouse_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_SPRINGGREEN}, {3, 4, HSV_WHITE}, {7, 1, HSV_SPRINGGREEN}
+    {0, 3, HSV_SPRINGGREEN}, {3, 4, HSV_WHITE}, {7, 2, HSV_SPRINGGREEN}
 );
 const rgblight_segment_t PROGMEM rgb_m_num_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_TEAL}, {3, 4, HSV_WHITE}, {7, 1, HSV_TEAL}
+    {0, 3, HSV_TEAL}, {3, 4, HSV_WHITE}, {7, 2, HSV_TEAL}
 );
 const rgblight_segment_t PROGMEM rgb_m_sym_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_ORANGE}, {3, 4, HSV_WHITE}, {7, 1, HSV_ORANGE}
+    {0, 3, HSV_ORANGE}, {3, 4, HSV_WHITE}, {7, 2, HSV_ORANGE}
 );
 const rgblight_segment_t PROGMEM rgb_m_fun_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_MAGENTA}, {3, 4, HSV_WHITE}, {7, 1, HSV_MAGENTA}
+    {0, 3, HSV_MAGENTA}, {3, 4, HSV_WHITE}, {7, 2, HSV_MAGENTA}
 );
 const rgblight_segment_t PROGMEM rgb_m_adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 5, HSV_YELLOW},
-    {5, 4, HSV_GREEN}
+    {0, 3, HSV_YELLOW}, {3, 4, HSV_GREEN}, {7, 2, HSV_YELLOW}
 );
 
-// Define the array of RGB layers.
+/* Define the array of RGB layers. */
 const rgblight_segment_t* const PROGMEM planck_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_base_layer,
     rgb_num_layer,
@@ -193,7 +205,7 @@ const rgblight_segment_t* const PROGMEM planck_rgb_layers[] = RGBLIGHT_LAYERS_LI
 );
 
 void keyboard_post_init_user(void) {
-    // Enable the LED layers
+    /* Enable the LED layers */
     rgblight_layers = planck_rgb_layers;
 }
 

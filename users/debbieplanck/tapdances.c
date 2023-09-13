@@ -19,7 +19,7 @@ td_state_t cur_dance(tap_dance_state_t *state) {
     } else return TD_UNKNOWN;
 }
 
-// create SPACE_NUM tap dance instance
+/* create SPACE_NUM tap dance instance */
 static td_tap_t sn_state = {
   .is_press_action = true,
   .state = TD_NONE
