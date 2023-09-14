@@ -128,10 +128,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT_SYMT:
+        case LT_SYME:
         case LT_NUMS:
-        case LT_FUNB:
-        case LT_NAVE:
+        case LT_FUNT:
+        case LT_NAVB:
+        case LT_MOUD:
             return TAPPING_TERM;
         default:
             return QUICK_TAP_TERM;
