@@ -12,9 +12,8 @@
 #define MO_MMOU          MO(_M_MOUSE)
 #define MO_MADJ          MO(_M_ADJ)
 
-#define LT_SYME          LT(_M_SYM, KC_ENT)
+#define LT_FUNE          LT(_M_FUN, KC_ENT)
 #define LT_NUMS          LT(_M_NUM, KC_SPC)
-#define LT_FUNT          LT(_M_FUN, KC_TAB)
 #define LT_MOUD          LT(_M_MOUSE, KC_DEL)
 #define LT_NAVB          LT(_M_NAV, KC_BSPC)
 

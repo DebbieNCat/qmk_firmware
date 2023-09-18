@@ -64,16 +64,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _M_COMMON_L13,    _M_NUM_R3,
      _M_NUM_L4,        _M_NUM_R4
 ),
-[_M_SYM] = LAYOUT_wrapper(
-     _M_COMMON_L13,    _M_SYM_R1,
-     _M_COMMON_L2,     _M_SYM_R2,
-     _M_COMMON_L13,    _M_SYM_R3,
-     _M_SYM_L4,        _M_SYM_R4
-),
 [_M_FUN] = LAYOUT_wrapper(
      _M_COMMON_L13,    _M_FUN_R1,
-     _M_COMMON_L2,     _M_FUN_R2,
-     _M_COMMON_L13,    _M_FUN_R3,
+     _M_FUN_L2,        _M_FUN_R2,
+     _M_FUN_L3,        _M_FUN_R3,
      _M_FUN_L4,        _M_FUN_R4
 ),
 [_M_NAV] = LAYOUT_wrapper(
@@ -119,18 +113,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case M_GUIA:
         case M_GCLN:
             return TAPPING_TERM + 100;
-        case M_SFTD:
-        case M_SFTK:
-            return TAPPING_TERM - 25;
         default: return TAPPING_TERM;
     }
 }
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT_SYME:
         case LT_NUMS:
-        case LT_FUNT:
+        case LT_FUNE:
         case LT_NAVB:
         case LT_MOUD:
             return TAPPING_TERM;
