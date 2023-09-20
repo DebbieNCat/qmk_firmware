@@ -15,9 +15,7 @@ typedef enum {
 
 /* TAP DANCE enum */
 enum {
-    QUOT_GRV = 0,
-    PRN_OC
-//    SPC_NUM,
+    SPC_NUM = 0,
 };
 
 typedef struct {
@@ -29,13 +27,11 @@ typedef struct {
 td_state_t cur_dance(tap_dance_state_t *state);
 
 /* SINGLE TAP: SPACE   // SINGLE HOLD: NUM LAYER */
-//void sn_finished(tap_dance_state_t *state, void *user_data);
-//void sn_reset(tap_dance_state_t *state, void *user_data);
+void sn_finished(tap_dance_state_t *state, void *user_data);
+void sn_reset(tap_dance_state_t *state, void *user_data);
 
 /* Define Tap dance actions. */
 __attribute__((weak))
-tap_dance_action_t tap_dance_actions[2] = {
-    [QUOT_GRV] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_GRV),
-    [PRN_OC]   = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN)
-//    [SPC_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sn_finished, sn_reset)
+tap_dance_action_t tap_dance_actions[1] = {
+    [SPC_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sn_finished, sn_reset)
 };

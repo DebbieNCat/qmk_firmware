@@ -42,7 +42,7 @@
 /* Enable Light Layers implementation */
 #define RGBLIGHT_LAYERS
 /* Default layer 8 */
-#define RGBLIGHT_MAX_LAYERS 15
+/*#define RGBLIGHT_MAX_LAYERS 15*/
 /* Allow Light Layers to override RGB off configuration */
 #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
 
