@@ -12,7 +12,7 @@
 #   include "key_combos.h"
 #endif
 
-enum planck_layers {
+enum layers {
     _BASE = 0,
     _NUM,
     _FUN,

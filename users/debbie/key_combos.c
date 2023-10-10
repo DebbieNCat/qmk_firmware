@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "debbieplanck.h"
+#include "debbie.h"
 #include "key_combos.h"
 
 enum combos {

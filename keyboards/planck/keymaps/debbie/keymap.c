@@ -15,9 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "debbieplanck.h"
-
-#define LAYOUT_wrapper(...) LAYOUT_planck_grid(__VA_ARGS__)
+#include "debbie.h"
 
 /* KEYMAP */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -59,27 +57,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      __ADJ_L4,         __ADJ_R4
 ),
 };
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case M_GUIA:
-        case M_GCLN:
-            return TAPPING_TERM + 100;
-        default: return TAPPING_TERM;
-    }
-}
-
-uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT_NUMS:
-        case LT_FUNE:
-        case LT_NAVB:
-        case LT_MOUD:
-            return TAPPING_TERM;
-        default:
-            return QUICK_TAP_TERM;
-    }
-}
 
 /* LED physical location index
      6 5 4 3

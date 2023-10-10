@@ -1,6 +1,6 @@
 LTO_ENABLE = yes
 
-SRC += debbieplanck.c
+SRC += debbie.c
 
 ifdef COMBO_ENABLE
 	INTROSPECTION_KEYMAP_C = key_combos.c

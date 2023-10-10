@@ -1,6 +1,6 @@
-# Debbie's planck layout for planck rev7(drop)
+# Debbie's corne mk v3.0 layout
 
-**compile: qmk compile -kb planck/rev6_drop -km debbieplanck**
+**<compile> qmk compile -kb crkbd/rev1 -km debbie -e CONVERT_TO=rp2040_ce**
 
 <pre>
 [BASE - QWERTY]
