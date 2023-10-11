@@ -205,7 +205,7 @@ def convert_from_hex_to_uf2(buf):
     return resfile
 
 def to_str(b):
-    return b.decode("utf-8")
+    return b.decode("cp949")
 
 def get_drives():
     drives = []

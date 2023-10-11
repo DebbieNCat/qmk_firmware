@@ -20,8 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
-
+//#define USE_MATRIX_I2
 /* Select hand configuration */
 #define MASTER_LEFT
 // #define MASTER_RIGHT
@@ -70,3 +69,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef MOUSEKEY_TIME_TO_MAX
     #define MOUSEKEY_TIME_TO_MAX    64
 #endif
+
+#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"

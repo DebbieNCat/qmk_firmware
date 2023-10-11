@@ -9,6 +9,7 @@ TAP_DANCE_ENABLE = yes
 COMBO_ENABLE = yes
 LTO_ENABLE = yes
 MOUSEKEY_ENABLE = yes
+OLED_ENABLE = yes
 
 # *** Disabled
 AUDIO_ENABLE = no      # Audio output on port C6

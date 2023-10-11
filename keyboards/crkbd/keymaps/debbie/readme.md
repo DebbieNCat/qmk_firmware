@@ -1,6 +1,6 @@
 # Debbie's corne mk v3.0 layout
 
-**<compile> qmk compile -kb crkbd/rev1 -km debbie -e CONVERT_TO=rp2040_ce**
+**<compile> qmk compile -kb crkbd/rev1 -km debbie -e zCONVERT_TO=rp2040_ce**
 
 <pre>
 [BASE - QWERTY]
