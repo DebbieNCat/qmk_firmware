@@ -84,7 +84,7 @@
 #define _________CKRBD_COMMON_R2_________   XXXXXXX,   KC_LCTL,   KC_LSFT,   KC_LALT,   KC_LGUI,   XXXXXXX
 
 /*CKRBD - Base layer*/
-#define _________CKRBD_QWERTY_L1_________   XXXXXXX,   KC_Q,      KC_W,      KC_E,      KC_R,      KC_T
+#define _________CKRBD_QWERTY_L1_________   KC_ESC,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T
 #define _________CKRBD_QWERTY_L2_________   XXXXXXX,   M_GUIA,    M_ALTS,    M_SFTD,    M_CTLF,    KC_G
 #define _________CKRBD_QWERTY_L3_________   XXXXXXX,   KC_Z,      KC_X,      KC_C,      KC_V,      KC_B
 #define _________CKRBD_QWERTY_L4_________                                    LT_FUNE,   LT_NUMS,   KC_TAB

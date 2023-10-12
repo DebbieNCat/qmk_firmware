@@ -34,26 +34,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define COMBO_COUNT 3
 #define COMBO_TERM 100
 
-/* RGB  animation Undefine */
-#undef RGBLIGHT_EFFECT_BREATHING
-#undef RGBLIGHT_EFFECT_CHRISTMAS
-#undef RGBLIGHT_EFFECT_KNIGHT
-#undef RGBLIGHT_EFFECT_RAINBOW_MOOD
-#undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#undef RGBLIGHT_EFFECT_RGB_TEST
-#undef RGBLIGHT_EFFECT_SNAKE
-#undef RGBLIGHT_EFFECT_STATIC_GRADIENT
-#undef RGBLIGHT_EFFECT_TWINKLE
 
-
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_LIMIT_VAL 200
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
-
-    #define RGBLIGHT_LAYERS
-    #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+#ifdef OLED_ENABLE
+#   define SPLIT_WPM_ENABLE
+#   define SPLIT_OLED_ENABLE
+#   define OLED_FONT_H "keyboards/crkbd/keymaps/debbie/oledfont.c"
 #endif
 
 /* Mouse key speed and acceleration. */
@@ -70,4 +55,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define MOUSEKEY_TIME_TO_MAX    64
 #endif
 
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+
+/* RGB  animation Undefine */
+#undef RGBLIGHT_EFFECT_BREATHING
+#undef RGBLIGHT_EFFECT_CHRISTMAS
+#undef RGBLIGHT_EFFECT_KNIGHT
+#undef RGBLIGHT_EFFECT_RAINBOW_MOOD
+#undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#undef RGBLIGHT_EFFECT_RGB_TEST
+#undef RGBLIGHT_EFFECT_SNAKE
+#undef RGBLIGHT_EFFECT_STATIC_GRADIENT
+#undef RGBLIGHT_EFFECT_TWINKLE
