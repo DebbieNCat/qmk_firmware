@@ -629,7 +629,7 @@ static void render_anim(void) {
          }
          if(get_current_wpm() >IDLE_SPEED && get_current_wpm() <TAP_SPEED){
 			 current_prep_frame = (current_prep_frame + 1) % PREP_FRAMES;
-             oled_write_raw_P(prep[abs((PREP_FRAMES-1)-current_prep_frame)], ANIM_SIZE);
+             oled_write_raw_P(prep[0], ANIM_SIZE);
          }
          if(get_current_wpm() >=TAP_SPEED){
              current_tap_frame = (current_tap_frame + 1) % TAP_FRAMES;
