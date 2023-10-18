@@ -38,6 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef OLED_ENABLE
 #   define SPLIT_WPM_ENABLE
 #   define SPLIT_OLED_ENABLE
+#   define OLED_UPDATE_INTERVAL 10
 #   define OLED_FONT_H "keyboards/crkbd/keymaps/debbie/oledfont.c"
 #endif
 

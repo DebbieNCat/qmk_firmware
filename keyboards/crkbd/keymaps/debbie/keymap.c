@@ -50,17 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_MOUSE] = LAYOUT_wrapper(
-  _________CKRBD_MOUSE_L1_________,  _________CKRBD_MOUSE_R1_________,
-  _________CKRBD_MOUSE_L2_________,  _________CKRBD_MOUSE_R2_________,
-  _________CKRBD_MOUSE_L3_________,  _________CKRBD_MOUSE_R3_________,
-  _________CKRBD_MOUSE_L4_________,  _________CKRBD_MOUSE_R4_________
-  ),
-
-  [_ADJ] = LAYOUT_wrapper(
-  _________CKRBD_ADJUST_L1_________,  _________CKRBD_ADJUST_R1_________,
-  _________CKRBD_ADJUST_L2_________,  _________CKRBD_ADJUST_R2_________,
-  _________CKRBD_ADJUST_L3_________,  _________CKRBD_ADJUST_R3_________,
-  _________CKRBD_ADJUST_L4_________,  _________CKRBD_ADJUST_R4_________
+    _________CKRBD_MOUSE_L1_________,  _________CKRBD_MOUSE_R1_________,
+    _________CKRBD_MOUSE_L2_________,  _________CKRBD_MOUSE_R2_________,
+    _________CKRBD_MOUSE_L3_________,  _________CKRBD_MOUSE_R3_________,
+    _________CKRBD_MOUSE_L4_________,  _________CKRBD_MOUSE_R4_________
   ),
 };
 
@@ -98,9 +91,6 @@ void render_layer_state(void) {
             break;
         case _MOUSE:
             oled_write_P(PSTR("MOU\n"), false);
-            break;
-        case _ADJ:
-            oled_write_P(PSTR("ADJ\n"), false);
             break;
         default:
             oled_write_P(PSTR("DEF\n"), false );
