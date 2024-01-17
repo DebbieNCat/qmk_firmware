@@ -3,11 +3,12 @@
 
 /* MOVE TO LAYER */
 #define MO_ADJ           MO(_ADJ)
+#define MO_NAV           MO(_NAV)
+#define MO_FUN           MO(_FUN)
 
 #define LT_FUNE          LT(_FUN, KC_ENT)
 #define LT_NUMS          LT(_NUM, KC_SPC)
-#define LT_NAVB          LT(_NAV, KC_BSPC)
-#define LT_MOUD          LT(_MOUSE, KC_DEL)
+#define LT_NAVT          LT(_NAV, KC_TAB)
 
 /* MIRYOKU HOME ROWS */
 #define M_GUIA           GUI_T(KC_A)

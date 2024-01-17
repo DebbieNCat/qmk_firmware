@@ -48,13 +48,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _________CKRBD_NAVIGATE_L3_________,  _________CKRBD_NAVIGATE_R3_________,
     _________CKRBD_NAVIGATE_L4_________,  _________CKRBD_NAVIGATE_R4_________
   ),
-
-  [_MOUSE] = LAYOUT_wrapper(
-    _________CKRBD_MOUSE_L1_________,  _________CKRBD_MOUSE_R1_________,
-    _________CKRBD_MOUSE_L2_________,  _________CKRBD_MOUSE_R2_________,
-    _________CKRBD_MOUSE_L3_________,  _________CKRBD_MOUSE_R3_________,
-    _________CKRBD_MOUSE_L4_________,  _________CKRBD_MOUSE_R4_________
-  ),
 };
 
 #ifdef OLED_ENABLE
@@ -88,9 +81,6 @@ void render_layer_state(void) {
             break;
         case _NAV:
             oled_write_P(PSTR("NAV\n"), false);
-            break;
-        case _MOUSE:
-            oled_write_P(PSTR("MOU\n"), false);
             break;
         default:
             oled_write_P(PSTR("DEF\n"), false );
@@ -663,6 +653,19 @@ bool oled_task_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_00 :
+          if (record -> event.pressed) {
+            SEND_STRING("00");
+          }
+          break;
+
+        case KC_000 :
+          if (record -> event.pressed) {
+            SEND_STRING("000");
+          }
+          break;
+      }
     return true;
 }
 #endif

@@ -17,6 +17,11 @@ enum layers {
     _NUM,
     _FUN,
     _NAV,
-    _MOUSE,
     _ADJ,
 };
+
+enum custom_keycodes {
+  KC_00 = SAFE_RANGE,
+  KC_000,
+};
+

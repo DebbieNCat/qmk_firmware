@@ -19,43 +19,36 @@
 
 /* KEYMAP */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
-[_BASE] = LAYOUT_wrapper(
-     __QWERTY_L1,      __QWERTY_R1,
-     __QWERTY_L2,      __QWERTY_R2,
-     __QWERTY_L3,      __QWERTY_R3,
-     __QWERTY_L4,      __QWERTY_R4
-),
-[_NUM] = LAYOUT_wrapper(
-     __NUM_L1,         __NUM_R1,
-     __NUM_L2,         __NUM_R2,
-     __NUM_L3,         __NUM_R3,
-     __NUM_L4,         __NUM_R4
-),
-[_FUN] = LAYOUT_wrapper(
-     __FUN_L1,         __FUN_R1,
-     __FUN_L2,         __FUN_R2,
-     __FUN_L3,         __FUN_R3,
-     __FUN_L4,         __FUN_R4
-),
-[_NAV] = LAYOUT_wrapper(
-     __NAV_L1,         __NAV_R1,
-     __NAV_L2,         __NAV_R2,
-     __NAV_L3,         __NAV_R3,
-     __NAV_L4,         __NAV_R4
-),
-[_MOUSE] = LAYOUT_wrapper(
-     __MOU_L1,        __MOU_R1,
-     __MOU_L2,        __MOU_R2,
-     __MOU_L3,        __MOU_R3,
-     __MOU_L4,        __MOU_R4
-),
-[_ADJ] = LAYOUT_wrapper(
-     __ADJ_L1,         __ADJ_R1,
-     __ADJ_L2,         __ADJ_R2,
-     __ADJ_L3,         __ADJ_R3,
-     __ADJ_L4,         __ADJ_R4
-),
+  [_BASE] = LAYOUT_wrapper(
+       __QWERTY_L1,      __QWERTY_R1,
+       __QWERTY_L2,      __QWERTY_R2,
+       __QWERTY_L3,      __QWERTY_R3,
+       __QWERTY_L4,      __QWERTY_R4
+  ),
+  [_NUM] = LAYOUT_wrapper(
+       __NUM_L1,         __NUM_R1,
+       __NUM_L2,         __NUM_R2,
+       __NUM_L3,         __NUM_R3,
+       __NUM_L4,         __NUM_R4
+  ),
+  [_FUN] = LAYOUT_wrapper(
+       __FUN_L1,         __FUN_R1,
+       __FUN_L2,         __FUN_R2,
+       __FUN_L3,         __FUN_R3,
+       __FUN_L4,         __FUN_R4
+  ),
+  [_NAV] = LAYOUT_wrapper(
+       __NAV_L1,         __NAV_R1,
+       __NAV_L2,         __NAV_R2,
+       __NAV_L3,         __NAV_R3,
+       __NAV_L4,         __NAV_R4
+  ),
+  [_ADJ] = LAYOUT_wrapper(
+       __ADJ_L1,         __ADJ_R1,
+       __ADJ_L2,         __ADJ_R2,
+       __ADJ_L3,         __ADJ_R3,
+       __ADJ_L4,         __ADJ_R4
+  ),
 };
 
 /* LED physical location index
@@ -82,9 +75,6 @@ const rgblight_segment_t PROGMEM rgb_fun_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 const rgblight_segment_t PROGMEM rgb_nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 3, HSV_GOLDENROD}, {3, 4, HSV_WHITE}, {7, 2, HSV_GOLDENROD}
 );
-const rgblight_segment_t PROGMEM rgb_mouse_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 3, HSV_SPRINGGREEN}, {3, 4, HSV_WHITE}, {7, 2, HSV_SPRINGGREEN}
-);
 const rgblight_segment_t PROGMEM rgb_adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 3, HSV_YELLOW}, {3, 4, HSV_GREEN}, {7, 2, HSV_YELLOW}
 );
@@ -95,7 +85,6 @@ const rgblight_segment_t* const PROGMEM planck_rgb_layers[] = RGBLIGHT_LAYERS_LI
     rgb_num_layer,
     rgb_fun_layer,
     rgb_nav_layer,
-    rgb_mouse_layer,
     rgb_adj_layer,
     rgb_capslock_layer
 );
@@ -119,7 +108,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(1, layer_state_cmp(state, _NUM));
     rgblight_set_layer_state(2, layer_state_cmp(state, _FUN));
     rgblight_set_layer_state(3, layer_state_cmp(state, _NAV));
-    rgblight_set_layer_state(4, layer_state_cmp(state, _MOUSE));
     rgblight_set_layer_state(5, layer_state_cmp(state, _ADJ));
 
     return state;
