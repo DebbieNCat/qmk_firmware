@@ -51,7 +51,7 @@
 #define __NAV_L4      XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   _______
 
 #define __NAV_R1      XXXXXXX,   KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END,    KC_INS
-#define __NAV_R2      XXXXXXX,   KC_LEFT,   KC_DOWN,   KC_RGHT,   XXXXXXX,   XXXXXXX
+#define __NAV_R2      XXXXXXX,   KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   XXXXXXX
 #define __NAV_R3      __BLANK_NOOP
 #define __NAV_R4      __BLANK_NOOP
 
